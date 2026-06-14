@@ -1,53 +1,72 @@
-<<<<<<< HEAD
-# Enterprise Fraud Analytics RAG Engine
+# Automated Fraud Analytics RAG Engine
 
-A production-grade Retrieval-Augmented Generation (RAG) orchestration platform built to ingest multi-page compliance white papers dynamically, construct dense vector spatial indices, and provide an interactive terminal loop interface for real-time semantic discovery.
-
----
-
-## 🏗️ Production Architecture vs. Baseline Implementations
-Unlike baseline RAG assignments that rely on hardcoded static strings inside a single processing module, this platform implements a decoupled, event-driven infrastructure:
-
-1. **Decoupled Processing Pipeline (`ingest.py`):** Opens physical data streams out of multi-page `.pdf` files from disk storage using programmatic abstraction layers, splits text systematically into context-insulated packets, and vectorizes structural fields into binary serialization indexes.
-2. **Stateful Application Runtime (`search.py`):** An asynchronous interactive shell environment that hydrates local vector binaries into high-performance RAM instances instantly, supporting seamless, repetitive analytics probing without costly document reprocessing loops.
+A professional AI search engine that reads a physical financial fraud PDF report, converts it into searchable mathematical vectors, and lets you ask questions interactively through your terminal.
 
 ---
 
-## 🛠️ Deep Technical Stack & Parameter Tuning
-* **Core Framework:** LangChain Engine Abstractions (`langchain-huggingface`)
-* **Vector Vector Store:** **FAISS (Facebook AI Similarity Search)** utilizing dense vector spatial clustering matrices.
-* **Embedding Model:** `sentence-transformers/all-MiniLM-L6-v2` transforming text strings into robust 384-dimensional conceptual vectors.
-* **Document Parsing Unit:** `pypdf` structural token extractor.
-* **Matrix Segmentation Constants:**
-  - `chunk_size`: 450 characters (Optimized mathematical window to map precise paragraphs cleanly).
-  - `chunk_overlap`: 50 characters (Strategic sliding boundaries preventing informational loss across neighboring chunks).
+### Project Execution Interface
+![Project Execution](Screenshot1.png)
 
 ---
 
-## 📊 Evaluation Matrix & Operational Validation
+## How It Works (The Pipeline Flow)
 
-### Test Case Execution
-* **Target Analytical Query:** *"What civil penalty or fines were imposed on Wells Fargo for mortgage fraud?"*
-* **Search Depth Factor ($k$):** Set to 2 ($k=2$) to ensure maximum structural context retrieval.
+The project is split into two separate modules so you do not have to process the PDF every time you ask a question:
 
-### Verified Live Output Metrics
 ```text
-Analyzing semantic matches for: 'What civil penalty or fines were imposed on Wells Fargo for mortgage fraud?'...
+[ 1. Ingestion Pipeline (ingest.py) ]
+Physical PDF File -> Text Extraction -> Paragraph Chunks -> FAISS Database (Saved on disk)
 
-  [MATCH #1] Verified Source: fighting-fraud-in-financial-services.pdf (Page 2)
-  ----------------------------------------------------------------------
-    The US Department of Justice has imposed a civil penalty of
-    $2.09 billion on Wells Fargo under the Financial Institutions,
-    Reform, Recovery, and Enforcement Act for originating and
-    selling mortgage loans containing misstated income.
-  ----------------------------------------------------------------------
+[ 2. Interactive Application (search.py) ]
+User Input Query -> FAISS Vector Search -> Terminal Prints Text + Page Citations
+```
 
-  [MATCH #2] Verified Source: fighting-fraud-in-financial-services.pdf (Page 6)
-  ----------------------------------------------------------------------
-    3. US Department of Justice, Wells Fargo Agrees to Pay $2.09 Billion Penalty for
-    Allegedly Misrepresenting Quality of Loans Used in Residential Mortgage-Backed...
-  ----------------------------------------------------------------------
-=======
-# RAG-Document-Ingestion-Pipeline
-An enterprise decoupled RAG pipeline using FAISS, Lang Chain, and Python for financial document semantic search.
->>>>>>> a1474ba114450b3b51ce0612523238336279eb27
+### Project Structure
+- **`documents/`**: Folder containing your physical source document (`fighting-fraud-in-financial-services.pdf`).
+- **`faiss_fraud_db/`**: The generated local vector database storage folder.
+- **`ingest.py`**: Processes and indexes the text from the PDF file.
+- **`search.py`**: Runs the interactive loop application in your terminal to search the database.
+
+---
+
+## Setup and Running Instructions
+
+Follow these terminal steps to set up and run the engine:
+
+### 1. Install Dependencies
+```bash
+pip install pypdf langchain-huggingface langchain-community faiss-cpu sentence-transformers
+```
+
+### 2. Build the Database
+Run the ingestion script to parse your PDF file and compile the local FAISS index:
+```bash
+python ingest.py
+```
+
+### 3. Run the Search App
+Launch the interactive terminal search prompt:
+```bash
+python search.py
+```
+
+---
+
+## Sample Queries to Try
+
+Once the app is running, paste these queries into the terminal to test the system:
+- *"What civil penalty or fines were imposed on Wells Fargo for mortgage fraud?"*
+- *"What are the key trends driving next-gen approaches in fraud detection?"*
+
+*(Type `exit` to quit the interactive search application).*
+
+---
+
+### Push the update to GitHub
+Once you save the code above into your local `README.md` file, run these commands in your terminal to update your repository online:
+
+```bash
+git add README.md
+git commit -m "docs: simplify readme content and layout"
+git push origin main
+```
