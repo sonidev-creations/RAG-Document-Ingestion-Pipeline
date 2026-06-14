@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Enterprise Fraud Analytics RAG Engine
 
 A production-grade Retrieval-Augmented Generation (RAG) orchestration platform built to ingest multi-page compliance white papers dynamically, construct dense vector spatial indices, and provide an interactive terminal loop interface for real-time semantic discovery.
@@ -46,3 +47,7 @@ Analyzing semantic matches for: 'What civil penalty or fines were imposed on Wel
     3. US Department of Justice, Wells Fargo Agrees to Pay $2.09 Billion Penalty for
     Allegedly Misrepresenting Quality of Loans Used in Residential Mortgage-Backed...
   ----------------------------------------------------------------------
+=======
+# RAG-Document-Ingestion-Pipeline
+An enterprise decoupled RAG pipeline using FAISS, Lang Chain, and Python for financial document semantic search.
+>>>>>>> a1474ba114450b3b51ce0612523238336279eb27
