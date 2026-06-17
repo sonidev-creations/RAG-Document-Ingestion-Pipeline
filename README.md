@@ -1,6 +1,6 @@
 # RAG Document Ingestion Pipeline
 
-A professional AI search engine that reads a physical financial fraud PDF report, converts it into searchable mathematical vectors, and lets you ask questions interactively through your terminal.
+A professional AI search engine(based upon langchain framework) that reads a physical financial fraud PDF report, converts it into searchable mathematical vectors, and lets you ask questions interactively through your terminal.
 
 ---
 
