@@ -53,6 +53,7 @@ To maximize semantic coherence and retrieval precision, documents are parsed usi
 *   **Dependency Management**: `pip` (Python package installer) paired with a structured `requirements.txt`.
 *   **Version Control**: Distributed tracking, staging, commits, and remote hosting managed via Git and GitHub.
 
+---
 
 ## Setup and Running Instructions
 
