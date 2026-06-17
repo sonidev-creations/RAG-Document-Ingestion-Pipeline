@@ -86,13 +86,4 @@ Once the app is running, paste these queries into the terminal to test the syste
 
 *(Type `exit` to quit the interactive search application).*
 
----
-
-### Push the update to GitHub
-Once you save the code above into your local `README.md` file, run these commands in your terminal to update your repository online:
-
-```bash
-git add README.md
-git commit -m "docs: simplify readme content and layout"
-git push origin main
-```
+`
