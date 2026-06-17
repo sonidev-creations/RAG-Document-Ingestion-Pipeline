@@ -1,6 +1,6 @@
 # RAG Document Ingestion Pipeline
 
-A professional AI search engine(based upon langchain framework) that reads a physical financial fraud PDF report, converts it into searchable mathematical vectors, and lets you ask questions interactively through your terminal.
+A professional AI search engine that reads a physical financial fraud PDF report, converts it into searchable mathematical vectors, and lets you ask questions interactively through your terminal.
 
 ---
 
@@ -28,6 +28,31 @@ User Input Query -> FAISS Vector Search -> Terminal Prints Text + Page Citations
 - **`search.py`**: Runs the interactive loop application in your terminal to search the database.
 
 ---
+## Technical Specification & Environment
+
+The system architecture is engineered using a modern AI/ML stack, optimized for low-latency vector operations on local hardware.
+
+### Core Architecture Layers
+
+*   **Development Environment (IDE)**: Visual Studio Code (VS Code) configured for Python environments.
+*   **Orchestration Framework**: `LangChain` (`langchain-huggingface`) for managing data pipelines and retrievers.
+*   **Parsing Library**: `pypdf` for fast, structure-aware text and metadata extraction from local PDF files.
+*   **Embedding Model**: `sentence-transformers/all-MiniLM-L6-v2` generating 384-dimensional dense mathematical vectors.
+*   **Vector Store Database**: `FAISS` (Facebook AI Similarity Search) optimized for high-speed clustering and similarity matching.
+
+### Configuration & Chunk Parameters
+
+To maximize semantic coherence and retrieval precision, documents are parsed using the following specialized parameters:
+
+*   **Chunk Size**: `450` characters per block.
+*   **Chunk Overlap**: `50` characters of sliding window overlap to maintain contextual continuity across splits.
+*   **Environment Configuration**: Configured via the native Python `os` module to suppress framework noise (e.g., forcing `HF_HUB_DISABLE_SYMLINKS_WARNING=1` to ensure a clean terminal interface).
+
+### Package Management & Deployment
+
+*   **Dependency Management**: `pip` (Python package installer) paired with a structured `requirements.txt`.
+*   **Version Control**: Distributed tracking, staging, commits, and remote hosting managed via Git and GitHub.
+
 
 ## Setup and Running Instructions
 
