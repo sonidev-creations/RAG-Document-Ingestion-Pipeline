@@ -85,5 +85,3 @@ Once the app is running, paste these queries into the terminal to test the syste
 - *"What are the key trends driving next-gen approaches in fraud detection?"*
 
 *(Type `exit` to quit the interactive search application).*
-
-`
